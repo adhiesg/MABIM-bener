@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
+
     }
 
     @Override
@@ -91,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
+                Intent intent = new Intent(this, MainMenu.class);
+                startActivity(intent);
+
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
@@ -133,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             Uri personPhoto = acct.getPhotoUrl();
 
 
-        Toast.makeText(this,"Nama: " + personName + "ID :" + personId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Selamat Datang " + personName, Toast.LENGTH_SHORT).show();
         }
     }
 
