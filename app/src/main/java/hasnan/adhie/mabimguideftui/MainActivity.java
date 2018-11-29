@@ -37,24 +37,24 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
-    ViewFlipper v_flipper;
+    /* ViewFlipper v_flipper;
     Button button;
     int[] imageos={
             R.drawable.slide1,
             R.drawable.slide21,
             R.drawable.slide3
-    };
+    }; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        v_flipper=findViewById(R.id.v_flipper);
+        /*v_flipper=findViewById(R.id.v_flipper);
 
         for(int i=0;i<imageos.length;i++) {
             flip_image(imageos[i]);
-        }
+        }*/
         signin = (SignInButton)findViewById(R.id.sign_in_button);
         mAuth = FirebaseAuth.getInstance();
 
